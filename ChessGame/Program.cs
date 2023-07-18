@@ -1,4 +1,5 @@
 ﻿using board;
+using chess;
 
 namespace ChessGame
 {
@@ -6,9 +7,25 @@ namespace ChessGame
     {
         static void Main()
         {
-            Board board = new();
+            try
+            {
+                Board board = new(8, 8);
 
-            Screen.PrintBoard(board);
+                board.PlacePiece(
+                    new Tower(board, Color.BLACK),
+                    new Position(0, 0)
+                );
+                board.PlacePiece(
+                    new King(board, Color.BLACK),
+                    new Position(0, 1)
+                );
+
+                Screen.PrintBoard(board);
+            }
+            catch (BoardException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
