@@ -4,11 +4,11 @@ namespace ChessGame
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Board board = new();
 
-            Console.WriteLine("board: " + board.ToString());
+            Screen.PrintBoard(board);
         }
     }
 }
