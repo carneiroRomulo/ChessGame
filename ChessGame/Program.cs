@@ -6,9 +6,9 @@ namespace ChessGame
     {
         static void Main(string[] args)
         {
-            Position position = new Position(1, 1);
+            Board board = new();
 
-            Console.WriteLine("Position: " + position.ToString());
+            Console.WriteLine("board: " + board.ToString());
         }
     }
 }
