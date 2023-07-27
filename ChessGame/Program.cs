@@ -10,9 +10,22 @@ namespace ChessGame
             try
             {
                 ChessMatch chessMatch = new();
-               
 
-                Screen.PrintBoard(chessMatch.Board);
+                while (!chessMatch.Finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(chessMatch.Board);
+
+                    Console.WriteLine();
+                    Console.Write("Initial Position (Ex. A2): ");
+                    Position origin = Screen.ReadChessPosition().ToPosition();
+
+                    Console.Write("Final Position (Ex. B3): ");
+                    Position destination = Screen.ReadChessPosition().ToPosition();
+
+                    chessMatch.ExecuteMoviment(origin, destination);
+                }
+
             }
             catch (BoardException e)
             {

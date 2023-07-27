@@ -1,4 +1,5 @@
 ﻿using board;
+using chess;
 
 namespace ChessGame
 {
@@ -24,14 +25,14 @@ namespace ChessGame
                 Console.WriteLine();
             }
 
-             Console.Write("  A B C D E F G H");
+            Console.Write("  A B C D E F G H");
         }
 
         public static void PrintPiece(Piece piece)
         {
-            switch(piece.Color)
+            switch (piece.Color)
             {
-                case Color.WHITE: 
+                case Color.WHITE:
                     Console.Write(piece);
                     break;
 
@@ -46,6 +47,15 @@ namespace ChessGame
                     break;
             }
             Console.Write(" ");
+        }
+
+        public static ChessPosition ReadChessPosition()
+        {
+            string s = Console.ReadLine();
+            char xAxis = s[0];
+            int yAxis = int.Parse(s[1] + "");
+
+            return new ChessPosition(xAxis, yAxis);
         }
     }
 }
