@@ -2,7 +2,7 @@
 {
     class Board
     {
-        public int          Rows   { get; set; }
+        public int          Rows    { get; set; }
         public int          Columns { get; set; }
         private Piece[,]    _pieces;
 
@@ -21,6 +21,19 @@
         public Piece GetPiece(Position position)
         {
             return _pieces[position.Row, position.Column];
+        }
+
+        public Piece? RemovePiece(Position position)
+        {
+            if (GetPiece(position.Row, position.Column) == null)
+            {
+                return null;
+            }
+            Piece aux = GetPiece(position.Row, position.Column);
+            aux.Position = null;
+            _pieces[position.Row, position.Column] = null;
+
+            return aux;
         }
 
         public void PlacePiece(Piece piece, Position position)

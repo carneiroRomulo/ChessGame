@@ -45,6 +45,7 @@ namespace ChessGame
                 default:
                     break;
             }
+            Console.Write(" ");
         }
     }
 }

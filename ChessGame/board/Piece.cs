@@ -14,5 +14,10 @@
             Color               = color;
             MovimentQuantities  = 0;
         }
+
+        public void IncrementMovimentQuantities()
+        {
+            MovimentQuantities++;
+        }
     }
 }

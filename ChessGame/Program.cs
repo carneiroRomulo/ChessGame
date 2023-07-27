@@ -9,26 +9,10 @@ namespace ChessGame
         {
             try
             {
-                Board board = new(8, 8);
+                ChessMatch chessMatch = new();
+               
 
-                board.PlacePiece(
-                    new Tower(board, Color.BLACK),
-                    new Position(0, 0)
-                );
-                board.PlacePiece(
-                    new Tower(board, Color.BLACK),
-                    new Position(1, 3)
-                );
-                board.PlacePiece(
-                    new King(board, Color.BLACK),
-                    new Position(0, 2)
-                );
-                board.PlacePiece(
-                    new Tower(board, Color.WHITE),
-                    new Position(3, 5)
-                );
-
-                Screen.PrintBoard(board);
+                Screen.PrintBoard(chessMatch.Board);
             }
             catch (BoardException e)
             {
