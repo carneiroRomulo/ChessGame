@@ -12,5 +12,10 @@ namespace chess
         {
             return "Q";
         }
+
+        public override bool[,] AllowedMoviments()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

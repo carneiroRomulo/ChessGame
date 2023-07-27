@@ -13,14 +13,7 @@ namespace ChessGame
 
                 for (int j = 0; j < board.Columns; j++)
                 {
-                    if (board.GetPiece(i, j) == null)
-                    {
-                        Console.Write("- ");
-                    }
-                    else
-                    {
-                        PrintPiece(board.GetPiece(i, j));
-                    }
+                    PrintPiece(board.GetPiece(i, j));
                 }
                 Console.WriteLine();
             }
@@ -28,23 +21,58 @@ namespace ChessGame
             Console.Write("  A B C D E F G H");
         }
 
+        public static void PrintBoard(Board board, bool[,] allowedPositions)
+        {
+            ConsoleColor primaryBackground = Console.BackgroundColor;
+            ConsoleColor secondaryBackground = ConsoleColor.DarkGray;
+
+            for (int i = 0; i < board.Rows; i++)
+            {
+                Console.Write($"{board.Rows - i} ");
+
+                for (int j = 0; j < board.Columns; j++)
+                {
+                    if (allowedPositions[i, j])
+                    {
+                        Console.BackgroundColor = secondaryBackground;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = primaryBackground;
+                    }
+                    PrintPiece(board.GetPiece(i, j));
+                }
+                Console.WriteLine();
+                Console.BackgroundColor = primaryBackground;
+            }
+
+            Console.Write("  A B C D E F G H");
+        }
+
         public static void PrintPiece(Piece piece)
         {
-            switch (piece.Color)
+            if (piece == null)
             {
-                case Color.WHITE:
-                    Console.Write(piece);
-                    break;
+                Console.Write("-");
+            }
+            else
+            {
+                switch (piece.Color)
+                {
+                    case Color.WHITE:
+                        Console.Write(piece);
+                        break;
 
-                case Color.BLACK:
-                    ConsoleColor consoleColor = Console.ForegroundColor;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(piece);
-                    Console.ForegroundColor = consoleColor;
-                    break;
+                    case Color.BLACK:
+                        ConsoleColor consoleColor = Console.ForegroundColor;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write(piece);
+                        Console.ForegroundColor = consoleColor;
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
             }
             Console.Write(" ");
         }

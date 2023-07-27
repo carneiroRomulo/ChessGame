@@ -34,19 +34,19 @@ namespace chess
         {
             char c = 'A';
 
-            for (int i = 1; i <= 8; i++)
-            {
-                Board.PlacePiece(new Pawn(Board, Color.BLACK), new ChessPosition(c, 2).ToPosition());
-                Board.PlacePiece(new Pawn(Board, Color.WHITE), new ChessPosition(c, 7).ToPosition());
+            //for (int i = 1; i <= 8; i++)
+            //{
+            //    Board.PlacePiece(new Pawn(Board, Color.BLACK), new ChessPosition(c, 2).ToPosition());
+            //    Board.PlacePiece(new Pawn(Board, Color.WHITE), new ChessPosition(c, 7).ToPosition());
 
-                c++;
-            }
-            Board.PlacePiece(new Tower(Board, Color.BLACK), new ChessPosition('A', 1).ToPosition());
+            //    c++;
+            //}
+            //Board.PlacePiece(new Tower(Board, Color.BLACK), new ChessPosition('A', 1).ToPosition());
             Board.PlacePiece(new Tower(Board, Color.BLACK), new ChessPosition('H', 1).ToPosition());
-            Board.PlacePiece(new Knight(Board, Color.BLACK), new ChessPosition('B', 1).ToPosition());
-            Board.PlacePiece(new Knight(Board, Color.BLACK), new ChessPosition('G', 1).ToPosition());
-            Board.PlacePiece(new Bishop(Board, Color.BLACK), new ChessPosition('C', 1).ToPosition());
-            Board.PlacePiece(new Bishop(Board, Color.BLACK), new ChessPosition('F', 1).ToPosition());
+            //Board.PlacePiece(new Knight(Board, Color.BLACK), new ChessPosition('B', 1).ToPosition());
+            //Board.PlacePiece(new Knight(Board, Color.BLACK), new ChessPosition('G', 1).ToPosition());
+            //Board.PlacePiece(new Bishop(Board, Color.BLACK), new ChessPosition('C', 1).ToPosition());
+            //Board.PlacePiece(new Bishop(Board, Color.BLACK), new ChessPosition('F', 1).ToPosition());
             Board.PlacePiece(new King(Board, Color.BLACK), new ChessPosition('E', 1).ToPosition());
             Board.PlacePiece(new Queen(Board, Color.BLACK), new ChessPosition('D', 1).ToPosition());
 

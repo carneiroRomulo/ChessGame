@@ -20,6 +20,11 @@ namespace ChessGame
                     Console.Write("Initial Position (Ex. A2): ");
                     Position origin = Screen.ReadChessPosition().ToPosition();
 
+                    Console.Clear();
+                    bool[,] allowedPositions = chessMatch.Board.GetPiece(origin).AllowedMoviments();
+                    Screen.PrintBoard(chessMatch.Board, allowedPositions);
+
+                    Console.WriteLine();
                     Console.Write("Final Position (Ex. B3): ");
                     Position destination = Screen.ReadChessPosition().ToPosition();
 
@@ -27,9 +32,9 @@ namespace ChessGame
                 }
 
             }
-            catch (BoardException e)
+            catch (BoardException)
             {
-                Console.WriteLine(e.Message);
+                throw;
             }
         }
     }
