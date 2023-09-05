@@ -14,10 +14,13 @@ namespace ChessGame
                 try
                 {
                     Console.Clear();
-                    Screen.PrintBoard(chessMatch.Board);
-                    Console.WriteLine();
-                    Console.WriteLine("Round: " + chessMatch.Round);
-                    Console.WriteLine("Player: " + chessMatch.CurrentPlayer);
+
+                    Screen.PrintMatch(chessMatch);
+
+                    //Screen.PrintBoard(chessMatch.Board);
+                    //Console.WriteLine();
+                    //Console.WriteLine("Round: " + chessMatch.Round);
+                    //Console.WriteLine("Player: " + chessMatch.CurrentPlayer);
                     Console.WriteLine();
                     Console.Write("Initial Position (Ex. A2): ");
                     Position origin = Screen.ReadChessPosition().ToPosition();
