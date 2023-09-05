@@ -43,7 +43,8 @@ namespace ChessGame
                 }
 
             }
-            
+            Console.Clear();
+            Screen.PrintMatch(chessMatch);
         }
     }
 }
