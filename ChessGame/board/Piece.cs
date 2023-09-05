@@ -20,6 +20,11 @@
             MovimentQuantities++;
         }
 
+        public void DecrementMovimentQuantities()
+        {
+            MovimentQuantities--;
+        }
+
         public bool ExistsPossibleMoviment()
         {
             bool[,] matrix = AllowedMoviments();

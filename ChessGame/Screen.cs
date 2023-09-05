@@ -85,10 +85,10 @@ namespace ChessGame
             Console.WriteLine();
             Console.WriteLine("Round: " + match.Round);
             Console.WriteLine("Player: " + match.CurrentPlayer);
-            //if (match.Check)
-            //{
-            //    Console.WriteLine("CHECK!");
-            //}
+            if (match.Check)
+            {
+                Console.WriteLine("Check!");
+            }
         }   
 
         public static void PrintCapturedPieces(ChessMatch match)
